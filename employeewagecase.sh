@@ -3,12 +3,14 @@ FULL_DAY_WORKING_HRS=8
 HALF_DAY_WORKING_HRS=4
 
 dailyWage=0
-
-attendance=$((RANDOM%3))
-echo "random number : $attendance"
+MAX_WORKING_DAYS=20
+for(( i=0;i<MAX_WORKING_DAYS;i++))
+do
+	attendance=$((RANDOM%3))
 		case $attendance in
 			0)
 				echo "Employee is absent"
+				echo "Daily wage is 0"
 				;;
 			1)
 				echo "Employee is present"
@@ -21,3 +23,4 @@ echo "random number : $attendance"
 				echo "Daily wage for full time: $dailyWage"
 				;;
 		esac
+done
